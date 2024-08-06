@@ -3,7 +3,7 @@
 PLS_ADD("wsServer", "https://github.com/current-deps/wsServer.git");
 PLS_DEP("ws");
 
-// NOTE(dkorolev): If forked under the repo called `ws`, just `PLS_CURRENT_DEP("ws")` will do the job.
+// NOTE(dkorolev): If forked under the repo called `ws`, just `PLS_ADD_CURRENT_DEP("ws")` will do the job.
 
 #include "websockets.h"
 
