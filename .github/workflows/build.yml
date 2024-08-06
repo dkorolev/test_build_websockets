@@ -1,0 +1,22 @@
+name: Build
+
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: clone
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: pip install pls
+        run: pip install pls
+      - name: pls build
+        run: pls build
