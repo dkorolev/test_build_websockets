@@ -16,7 +16,11 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 1
-      - name: pip install pls
-        run: pip install pls
+      # - name: pip install pls
+      #   run: pip install pls
+      # - name: pls build
+      #   run: pls build
+      - name: clone pls
+        run: git clone -b better_pls_syntax https://github.com/dkorolev/pls
       - name: pls build
-        run: pls build
+        run: ./pls/pls/pls build
